@@ -1,6 +1,15 @@
 package com.bridgelab.annotations;
 
-public class MethodInfo
+import java.lang.annotation.*;
+@Documented
+@Target(ElementType.METHOD)
+@Inherited
+@Retention(RetentionPolicy.RUNTIME)
+
+public @interface MethodInfo
 {
-    
+    String author() default "Mihir";
+    String date();
+    int revision() default 1;
+    String comments();
 }
